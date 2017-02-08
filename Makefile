@@ -143,7 +143,9 @@ clean-containers:
 	@docker ps -a -q --filter=ancestor=redhawk/* | xargs -I {} docker rm {}
 
 clean-volume-containers: clean-containers
-	@docker rm redhawk-sdrroot-fs redhawk-ossiehome-fs || true
+	@docker rm \
+		redhawk-sdrroot-fs \
+		redhawk-ossiehome-fs || true
 
 clean-images: clean-volume-containers
 	@docker rmi \
@@ -157,7 +159,8 @@ clean-volumes: clean-images
 	@docker volume rm `docker volume ls -q -f dangling=true` || true
 
 clean:
-	@rm -rf work
+	@sudo rm -rf minimal/redhawk-fs minimal/omnievents-fs
+	@sudo rm -rf work
 	@rm -rf stamps
 
 distclean: clean-containers clean-volume-containers clean-images clean-volumes clean
