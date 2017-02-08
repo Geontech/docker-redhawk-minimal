@@ -23,13 +23,13 @@ The result is the GPP will launch and manage a Docker container of the Component
 
     docker run --sig-proxy=true --rm --net=host \
         --name COMPONENT_ID_COLON_IS_HYPHEN \
-        -v docker_omniorb:/etc/omniORB.cfg \
+        -v docker_omniorb_cfg:/etc/omniORB.cfg \
         __DOCKER_ARGS__ \
         __DOCKER_IMAGE__ \
         ./component/NAME/IMPL/EXEC \
         OTHER_TYPICAL_REDHAWK_ARGUMENTS
 
-The `docker_omniorb` property on the GPP allows you to configure the OmniORB instance within the launched containers to use a different IP than local host for the OmniORB connection.
+The `docker_omniorb_cfg` property on the GPP allows you to configure the OmniORB instance within the launched containers to use a different IP than local host for the OmniORB connection.
 
 > **Security Note:** By default, it is set to `/etc/omniORB.cfg`, so you may wish to change this property for security reasons.  It should be set to the absolute path in your file system.
 
