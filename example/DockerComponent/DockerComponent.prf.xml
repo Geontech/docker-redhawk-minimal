@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties PUBLIC "-//JTRS//DTD SCA V2.2.2 PRF//EN" "properties.dtd">
+<properties>
+  <simple id="__DOCKER_IMAGE__" mode="readwrite" type="string" commandline="true">
+    <value>redhawk/minimal</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+  <simple id="__DOCKER_ARGS__" mode="readwrite" type="string" commandline="true">
+    <value>--volumes-from redhawk-sdrroot-fs</value>
+    <kind kindtype="property"/>
+    <action type="external"/>
+  </simple>
+</properties>
