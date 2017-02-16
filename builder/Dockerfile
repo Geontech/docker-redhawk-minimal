@@ -23,7 +23,7 @@ MAINTAINER Thomas Goodwin <btgoodwin@geontech.com>
 RUN apt-get update -q
 
 WORKDIR /root
-ADD build.sh /root
+ADD build.sh /root/
 
 # Set the environment variables as passed in from build-deps
 ENV SDRROOT             ${SDRROOT}
